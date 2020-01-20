@@ -17,13 +17,12 @@ const speedtest = new FastSpeedtest({
 
 const date = new Date().toISOString();
 console.log(`Checking speed`, date);
-speedtest.getSpeed().then(download => {
-    console.log(`Speed: ${download} Mbps`);
+speedtest.getSpeed().catch(e => {
+    console.log('Error:', e.message);
+    return -1;
+}).then(download => {
+    console.log(`Speed: `, download);
     csvWriter.writeRecords([{ download, date }]).then(() => {
-        console.log('Written');
         process.exit();
     });
-}).catch(e => {
-    console.error(e.message);
-    process.exit(e);
 });
