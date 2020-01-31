@@ -5,6 +5,8 @@
   "license": "MIT",
   "dependencies": {
     "csv-writer": "^1.6.0",
-    "fast-speedtest-api": "^0.3.2"
+    "fast-speedtest-api": "^0.3.2",
+    "isomorphic-fetch": "^2.2.1",
+    "ping-lite": "^2.0.2"
   }
 }
